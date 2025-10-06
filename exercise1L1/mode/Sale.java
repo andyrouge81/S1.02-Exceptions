@@ -18,7 +18,6 @@ public class Sale {
     public Sale() {
         this.products = new ArrayList<>();
         this.totalPrice = totalPrice;
-
     }
 
     // getters

@@ -7,7 +7,7 @@ import TascaS102Exceptions.exercise1L1.mode.Sale;
 public class Main {
     public static void main(String[] args) {
 
-        // we create new products
+         // we create new products
 
         Product product1 = new Product("Bananas", 14.5);
 
