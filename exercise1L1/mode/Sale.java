@@ -50,9 +50,7 @@ public class Sale {
             for (Product p : products) {
                 this.totalPrice += p.getPrice();
             }
-
         }
-
     }
 }
 

@@ -31,7 +31,6 @@ public class Main {
             System.out.println(e.getMessage());
         }
 
-
         // for testing the "IndexPoutOfBoundsException" exception we create an emptyproduct variable
         // who goes to the 3 position, so we can see there isn't any value in the 3 position inside the array
 

@@ -28,6 +28,5 @@ public class Product {
 
         return String.format("\nName: %s - Price: %.2f", getName(), getPrice());
     }
-
 }
 
