@@ -29,6 +29,7 @@ public class Sale {
         return totalPrice;
     }
 
+
     // method which add products into the List
 
     public void addProduct(Product newProduct) {
