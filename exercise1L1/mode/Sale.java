@@ -7,20 +7,18 @@ import java.util.List;
 
 public class Sale {
 
-    // class fields
 
     private List<Product> products;
 
     private double totalPrice;
 
-    // constructor
 
     public Sale() {
         this.products = new ArrayList<>();
-        this.totalPrice = totalPrice;
+        this.totalPrice=0;
     }
 
-    // getters
+
     public List<Product> getProducts() {
         return List.copyOf(products);
     }
@@ -30,7 +28,6 @@ public class Sale {
     }
 
 
-    // method which add products into the List
 
     public void addProduct(Product newProduct) {
 
@@ -38,12 +35,12 @@ public class Sale {
 
     }
 
-    // method which calculate the total of the sale
+
     public void calculateTotal() throws EmptySaleException {
 
         if (products.isEmpty()) {
 
-            throw new EmptySaleException("To make a sale, first you have to add a product.");
+            throw new EmptySaleException("To make a sale, please add a product.");
 
         } else {
 
