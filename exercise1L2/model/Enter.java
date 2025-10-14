@@ -8,12 +8,9 @@ import java.util.Scanner;
 
 public class Enter {
 
-    // the obj. "input" must be static
+
     static Scanner input = new Scanner(System.in);
-    /**
-    @param message Message which it shows to the user before to ask the entry
-    @return the value(byte, int, float, String...) enter for the user
-    */
+
     // Byte method
     public static byte readByte(String message) {
         byte age = 0;
@@ -25,7 +22,7 @@ public class Enter {
                 age = input.nextByte();
                 isValid = true;
 
-                // handle the error, if the value isn't a byte or out of range
+
             } catch (InputMismatchException e) {
                 System.err.println("Format Error!. Please enter a byte number.");
 
@@ -34,9 +31,10 @@ public class Enter {
             }
 
         }
-        // return the byte age
+
         return age;
     }
+
     // Integer method
     public static int readInt(String message){
         boolean isValid = false;
@@ -47,19 +45,19 @@ public class Enter {
                 cars = input.nextInt();
                 isValid = true;
 
-                // handle the error, if the value isn't an Integer or out of range
+
             } catch(InputMismatchException e){
-                System.err.println("Not an interger number.");
+                System.err.println("Not an integer value.");
 
             }finally{
 
                 input.nextLine();
             }
         }
-        // return an Integer value
+
         return cars;
     }
-
+    // Float method
     public static float readFloat(String message){
         String number;
         float num = 0;
@@ -70,19 +68,19 @@ public class Enter {
                 System.out.println(message);
                 number = input.nextLine();
                 if (!number.contains(".")){
-                    // we throw a message exception if the float value not has the point symbol
+
                     throw new InputMismatchException("Input must contains a decimal point.");
                 }
                 num = Float.parseFloat(number);
                 test = true;
 
-                // in this point we handle the float error if the value isn't a decimal number
+
             }catch(InputMismatchException e){
                 System.err.println("Format Error!. Please enter a float number. e.g. 4.5");
 
             }
         }
-        // return the Float value
+
         return num;
 
     }
@@ -97,12 +95,12 @@ public class Enter {
                 System.out.println(message);
                 stringVar = input.nextLine();
                 if(!stringVar.contains(".")){
-                    // we throw a message exception if the float value not has the point symbol
+
                     throw new InputMismatchException("The input must contain a decimal point.");
                 }
                 var1 = Double.parseDouble(stringVar);
                 isValid = true;
-                //we handle the float error if the value isn't a decimal number
+
             } catch(InputMismatchException | NumberFormatException e){
                 System.err.println("Format Error. Please enter a decimal number. e.g. 4.7");
             }
@@ -122,7 +120,7 @@ public class Enter {
                 System.out.println(message);
                 String a = input.nextLine();
                 if(a.length() > 1 ){
-                    // this throw handle the enter of two or more characters for the user
+
                     throw new EnterException("You must enter only one letter.");
                 }
                 b = a.charAt(0);
@@ -131,7 +129,7 @@ public class Enter {
                 System.err.println(e.getMessage());
             }
         }
-        // return a char type value
+
         return b;
 
     }
@@ -145,18 +143,17 @@ public class Enter {
                 System.out.println(message);
                 chain = input.nextLine();
                 if(chain.isBlank()){
-                    // with this throw we can handle the character chain isn't empty
+
                     throw new EnterException("The string can not be empty.");
 
                 }
                 isValid = true;
             }catch(EnterException e){
-                System.out.println(e.getMessage());
-
+                System.err.println(e.getMessage());
 
             }
         }
-        // we return a String value
+
         return chain;
     }
 
@@ -171,21 +168,21 @@ public class Enter {
             try{
                 System.out.println(message);
                 confirmation = input.nextLine();
-                // we confirm the boolean isn't empty and the enter values for the user are "y" or "n"
+
                 if(confirmation.isBlank() || !(confirmation.equalsIgnoreCase("y")) && !(confirmation.equalsIgnoreCase("n"))){
                     throw new EnterException("Format Error!. No empty characters and should enter 'y' or 'n'.");
 
                 }
             isValid = true;
             }catch (EnterException e){
-                System.out.println(e.getMessage());
+                System.err.println(e.getMessage());
 
             }
         }
         if(confirmation.equalsIgnoreCase("y")){
             affirmation = true;
         }
-        // return a boolean value
+
         return affirmation;
     }
 }
