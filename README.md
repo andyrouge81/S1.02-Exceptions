@@ -1,4 +1,4 @@
-# S1.02-Execptions
+# S1.02-Execptions 🚧
 
 ## Tasks Objetives:
 
@@ -7,7 +7,7 @@
   - Add files to the GitHub repository using Git.
 
 
-## Documentation.
+## 📚 Documentation.
 
 [Exceptions Java docs](https://docs.oracle.com/javase/tutorial/essential/exceptions/index.html)
 
@@ -16,7 +16,7 @@
 
 ### Level 1. Exercise 1.
 
-
+<details>
 Create a class called "Product" with the attributes name and price, and another class called "Sale". This class has as attributes a collection of products and the total price of the sale.
 
 The "Sale" class has a method called calculaTotal() that launches the custom exception "VendaBuidaException" and displays on screen "To make a sale you must first add products" if the product collection is empty. If the collection has products, then you must turn the collection around and save the sum of all the prices of the products to the total price attribute of the sale.
@@ -25,10 +25,13 @@ The custom exception "VendaBuidaException" must be the daughter of the Exception
 
 Write the necessary code to generate and capture an exception type "IndexOutOfBoundsException".
 
+</details>
+
 ---
 
 ### Level 2. Exercise 1.
 
+<details>
 Create a class called "Input". This class should be used to control the different exceptions that may appear in Java when entering keyboard data using the Scanner class.
 The first thing to do is to instantiate an object of the Scanner class and from there, create static methods to read the different types of data from the keyboard. 
 ### Important
@@ -46,6 +49,8 @@ Methods to be implemented by capturing a custom exception of the Exception class
 - public static String readString(String message);
 - public static boolean readYesNo(String message), if the user enters “y”, returns “true”, if the user enters “n”, returns “false”.
 
+</details>
+
 ---
 
 ### Proposed Technologies. 
@@ -54,7 +59,7 @@ Methods to be implemented by capturing a custom exception of the Exception class
   - Java (JDK) 17 or higher. Oracle
   - Git & GitHub.
 
-### Requirements.
+### 🧾 Requirements.
 
 	- Java (JDK 17 o higher)
 	- IntelliJ IDEA / Eclipse / VSCode with Java extenxions
@@ -99,7 +104,7 @@ This project is only for educational porposes.
 	git push origin feature/NuevaFuncionalidad
 5. Open a _pull request_ and we will review it.
 
-### Contact.
+### 💌 Contact.
 
 For questions and suggestions you can open an _Isuue_ or contact me through the GitHub profile.
 
