@@ -53,7 +53,7 @@ Methods to be implemented by capturing a custom exception of the Exception class
 
 ---
 
-### Proposed Technologies. 
+### 💻 Proposed Technologies. 
 
   - IntelliJ IDEA /  Eclipse.
   - Java (JDK) 17 or higher. Oracle
@@ -65,7 +65,7 @@ Methods to be implemented by capturing a custom exception of the Exception class
 	- IntelliJ IDEA / Eclipse / VSCode with Java extenxions
 	- Git Terminal.
 
-### Instalation.
+### ⚒️ Instalation.
 
 1. Clone the repository.
 	```bash
@@ -77,20 +77,20 @@ Methods to be implemented by capturing a custom exception of the Exception class
 
 3. Open the project with your IDE and and make sure it is compatible with the JDK.
 
-### Execution.
+### ▶️ Execution.
 
 1. Navigate to `Main.java` file inside the corresponding folder.
 2. Run the file to vrify the result of your exercise.
 3. You can add objects and test how the exceptions are thrown.
 
 
-### Deploying.
+### 🤖 Deploying.
 
 This project is only for educational porposes. 
 
 	- Create an `.jar` executable from your IDE.
 
-### Contributions.
+### 🤝 Contributions.
 
 1. _Fork_ the repository.
 2. Create a new branch:
