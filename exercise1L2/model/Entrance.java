@@ -12,7 +12,7 @@ public class Enter {
     static Scanner input = new Scanner(System.in);
 
     // Byte method
-    public static byte readByte(String message) {
+    public byte readByte(String message) {
         byte age = 0;
         boolean isValid = false;
         while (!isValid) {
@@ -185,6 +185,8 @@ public class Enter {
 
         return affirmation;
     }
+
+
 }
 
 
