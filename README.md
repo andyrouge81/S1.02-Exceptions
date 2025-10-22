@@ -11,7 +11,7 @@
 ## 📚 Documentation:
 
 
-	[Exceptions Java docs](https://docs.oracle.com/javase/tutorial/essential/exceptions/index.html)
+[Exceptions Java docs](https://docs.oracle.com/javase/tutorial/essential/exceptions/index.html)
 
 
 ---
@@ -93,9 +93,9 @@ If the user enters "n" → returns false
 
 ### 📦 Requirements
 
-	- Java (JDK 17 o higher)
-	- An IDE: IntelliJ / Eclipse / VSCode (with Java extension)
-	- A terminal with Git installed
+- Java (JDK 17 o higher)
+- An IDE: IntelliJ / Eclipse / VSCode (with Java extension)
+- A terminal with Git installed
 
 ### ⚙️ Instalation
 
@@ -121,7 +121,7 @@ If the user enters "n" → returns false
 
 This project is for educational purposes only.
 
-	- You may generate an executable `.jar` file using your IDE if needed.
+- You may generate an executable `.jar` file using your IDE if needed.
 
 
 ### 🤝 Contributing
