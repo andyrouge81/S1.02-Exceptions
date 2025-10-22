@@ -1,190 +1,217 @@
 package TascaS102Exceptions.exercise1L2.model;
 
-import TascaS102Exceptions.exercise1L2.exception.EnterException;
-
+import TascaS102Exceptions.exercise1L2.exception.EntranceException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 
-public class Enter {
+public class Entrance {
 
 
-    static Scanner input = new Scanner(System.in);
-
-    // Byte method
-    public byte readByte(String message) {
-        byte age = 0;
-        boolean isValid = false;
-        while (!isValid) {
-
-            try {
-                System.out.println(message);
-                age = input.nextByte();
-                isValid = true;
+	public static Scanner input = new Scanner(System.in);
 
 
-            } catch (InputMismatchException e) {
-                System.err.println("Format Error!. Please enter a byte number.");
+	public static byte readByte(String message) {
 
-            }finally{
-                input.nextLine();
-            }
+		byte byteEntry = 0;
+		boolean isValid = false;
+		while (!isValid) {
 
-        }
-
-        return age;
-    }
-
-    // Integer method
-    public static int readInt(String message){
-        boolean isValid = false;
-        int cars = 0;
-        while (!isValid) {
-            try{
-                System.out.println(message);
-                cars = input.nextInt();
-                isValid = true;
+			try {
+				System.out.println(message);
+				byteEntry = input.nextByte();
+				if((byteEntry <  -128) && (byteEntry > 127)){
+					System.out.println("The byte number type ranges from -128 to 127 years.");
+				}else{
+					isValid = true;
+				}
 
 
-            } catch(InputMismatchException e){
-                System.err.println("Not an integer value.");
+			} catch (InputMismatchException e) {
+				System.err.println("Clue! Enter a number between -128 and 127.");
 
-            }finally{
+			}
+			input.nextLine();
+		}
 
-                input.nextLine();
-            }
-        }
-
-        return cars;
-    }
-    // Float method
-    public static float readFloat(String message){
-        String number;
-        float num = 0;
-        boolean test = false;
-
-        while(!test){
-            try{
-                System.out.println(message);
-                number = input.nextLine();
-                if (!number.contains(".")){
-
-                    throw new InputMismatchException("Input must contains a decimal point.");
-                }
-                num = Float.parseFloat(number);
-                test = true;
+		return byteEntry;
+	}
 
 
-            }catch(InputMismatchException e){
-                System.err.println("Format Error!. Please enter a float number. e.g. 4.5");
+	public static int readInt(String message){
 
-            }
-        }
+		boolean isValid = false;
+		int age = 0;
+		while (!isValid) {
+			try{
+				System.out.println(message);
+				age = input.nextInt();
+				if(age < 0 || age > 120){
+					System.err.println("Enter a real age please.");
+				}else{
+					isValid = true;
+				}
 
-        return num;
 
-    }
+			} catch(InputMismatchException e){
+				System.err.println("This is not a real age.");
 
-    // double method
-    public static double readDouble(String message){
-        double var1=0;
-        boolean isValid = false;
-        String stringVar = "";
-        while(!isValid){
-            try{
-                System.out.println(message);
-                stringVar = input.nextLine();
-                if(!stringVar.contains(".")){
+			}
+			input.nextLine();
+		}
 
-                    throw new InputMismatchException("The input must contain a decimal point.");
-                }
-                var1 = Double.parseDouble(stringVar);
-                isValid = true;
+		return age;
+	}
 
-            } catch(InputMismatchException | NumberFormatException e){
-                System.err.println("Format Error. Please enter a decimal number. e.g. 4.7");
-            }
-        }
 
-        return var1;
-    }
+	public static float readFloat(String message){
 
-    // methods with an EnterException class
+		String number;
+		float numResult = 0;
+		boolean isValid = false;
 
-    //Chat method
-    public static char readChar(String message){
-        char b = ' ';
-        boolean isValid = false;
-        while (!isValid){
-            try{
-                System.out.println(message);
-                String a = input.nextLine();
-                if(a.length() > 1 ){
+		while(!isValid){
+			try{
+				System.out.println(message);
+				number = input.next();
+				numResult = Float.parseFloat(number);
 
-                    throw new EnterException("You must enter only one letter.");
-                }
-                b = a.charAt(0);
-                isValid= true;
-            }catch(EnterException e){
-                System.err.println(e.getMessage());
-            }
-        }
+				if (!number.contains(".") && (numResult == Float.valueOf(number))){
 
-        return b;
+					throw new InputMismatchException("Input must contains a decimal point.");
+				}
 
-    }
+				numResult += Math.PI;
+				isValid = true;
 
-    // String method
-    public static String readString(String message){
-       String chain = "";
-        boolean isValid = false;
-        while(!isValid){
-            try{
-                System.out.println(message);
-                chain = input.nextLine();
-                if(chain.isBlank()){
 
-                    throw new EnterException("The string can not be empty.");
+			}catch(InputMismatchException | NumberFormatException e){
+				System.err.println("Format Error!. Please enter a float number. e.g. 4.5");
 
-                }
-                isValid = true;
-            }catch(EnterException e){
-                System.err.println(e.getMessage());
+			}
+			input.nextLine();
+		}
 
-            }
-        }
+		return numResult;
 
-        return chain;
-    }
+	}
 
-    //boolean method
-    public static boolean readYESNO(String message){
-        boolean affirmation= false;
 
-        String confirmation ="";
-        boolean isValid = false;
+	public static double readDouble(String message){
+		double numDouble = 0;
+		boolean isValid = false;
+		String userEntry;
+		while(!isValid){
+			try{
+				System.out.println(message);
+				userEntry = input.next();
+				numDouble = Double.parseDouble(userEntry);
+				if(!userEntry.contains(".") && (numDouble == Double.valueOf(userEntry))){
 
-        while(!isValid){
-            try{
-                System.out.println(message);
-                confirmation = input.nextLine();
+					throw new InputMismatchException("The input must contain a decimal point.");
+				}
 
-                if(confirmation.isBlank() || !(confirmation.equalsIgnoreCase("y")) && !(confirmation.equalsIgnoreCase("n"))){
-                    throw new EnterException("Format Error!. No empty characters and should enter 'y' or 'n'.");
+				numDouble += Math.PI;
 
-                }
-            isValid = true;
-            }catch (EnterException e){
-                System.err.println(e.getMessage());
+				isValid = true;
 
-            }
-        }
-        if(confirmation.equalsIgnoreCase("y")){
-            affirmation = true;
-        }
 
-        return affirmation;
-    }
+
+
+			} catch(InputMismatchException | NumberFormatException e){
+				System.err.println("Format Error. Please enter a decimal number. e.g. 4.7");
+			}
+			input.nextLine();
+		}
+
+		return numDouble;
+	}
+
+
+
+
+	public static char readChar(String message){
+		char userEntry = ' ';
+		boolean isValid = false;
+		while (!isValid){
+			try{
+				System.out.println(message);
+				String a = input.nextLine();
+				if(a.isEmpty()){
+					System.out.println("Please enter any character.");
+				}
+				if(a.length() > 1){
+
+					throw new EntranceException("Enter only one character.");
+				}
+
+				userEntry = a.charAt(0);
+				isValid= true;
+			}catch(StringIndexOutOfBoundsException | EntranceException e){
+				System.err.println("I have must insist, entry some character.");
+			}
+		}
+
+		return userEntry;
+
+	}
+
+	public static String readString(String message){
+		String userEntry = "";
+		boolean isValid = false;
+		while(!isValid){
+			try{
+				System.out.println(message);
+				userEntry = input.nextLine();
+				if(userEntry.isBlank()){
+
+					throw new EntranceException("You can't left in blank or enter spaces.");
+
+				}
+				isValid = true;
+			}catch(EntranceException e){
+				System.err.println("Please enter some characters.");
+
+			}
+		}
+
+		return userEntry;
+	}
+
+
+	public static boolean readYESNO(String message){
+		boolean statusVerify = false;
+
+		String confirmation ="";
+		boolean isValid = false;
+
+		while(!isValid){
+			try{
+				System.out.println(message);
+				confirmation = input.nextLine();
+
+				if(confirmation.isBlank()){
+					throw new EntranceException("Error!. No empty characters.");
+
+				}
+				if(!(confirmation.equalsIgnoreCase("y")) && !(confirmation.equalsIgnoreCase("n"))){
+					throw new EntranceException("Error!. You should enter 'y' or 'n'.");
+				}
+				isValid = true;
+
+			}catch (EntranceException e){
+				System.err.println(e.getMessage());
+
+			}
+		}
+		if(confirmation.equalsIgnoreCase("y")){
+			statusVerify = true;
+		}
+
+		return statusVerify;
+	}
+
+
 
 
 }
