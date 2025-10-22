@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+
 		Scanner enter = new Scanner(System.in);
 
         Product product1 = new Product("Bananas", 14.5);
