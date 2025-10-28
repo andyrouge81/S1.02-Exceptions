@@ -1,4 +1,4 @@
-package TascaS102Exceptions.exercise1L2.exception;
+package TascaS102Exceptions.level2.exception;
 
 public class EntranceException extends Exception {
 	public EntranceException(String message) {

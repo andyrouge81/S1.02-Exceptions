@@ -1,4 +1,4 @@
-package TascaS102Exceptions.exercise1L1.model;
+package TascaS102Exceptions.level1.model;
 
 public class Product {
 
@@ -10,12 +10,14 @@ public class Product {
 
     public Product(String name, double price){
 
+		if(price < 0){
+			throw new IllegalArgumentException("The price cannot be negative.");
+		}
+
         this.name = name;
         this.price = price;
 
-        if(this.price<0){
-            throw new IllegalArgumentException("The price can not be negative.");
-        }
+
 
     }
 

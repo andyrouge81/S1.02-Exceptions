@@ -1,15 +1,14 @@
-package TascaS102Exceptions.exercise1L2;
+package TascaS102Exceptions.level2;
 
-import TascaS102Exceptions.exercise1L2.model.Entrance;
+import TascaS102Exceptions.level2.model.Entrance;
 
-import static TascaS102Exceptions.exercise1L2.model.Entrance.input;
+import static TascaS102Exceptions.level2.model.Entrance.input;
 
 
 public class Main {
 	public static void main(String[] args) {
 
-
-		System.out.println("The Byte type test.");
+	System.out.println("The Byte type test.");
 		byte rangeByte = Entrance.readByte("Enter a number and i will tell you if this number is inside of the byte data type range: ");
 		System.out.println("Great!. The number "+rangeByte+ " it´s inside of the byte data type range.");
 		System.out.println();
@@ -23,7 +22,6 @@ public class Main {
 		float number = Entrance.readFloat("Enter a number with decimals, then this number will be multiply by PI: ");
 		System.out.println("This result "+number+ ", verify the floats number are only precise up to 7 digits after the coma.");
 		System.out.println();
-
 
 		System.out.println("Double type memory test.");
 		double variable = Entrance.readDouble("Enter the same number used above, then this number will be multiply by PI: ");

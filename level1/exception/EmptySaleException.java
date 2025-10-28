@@ -1,4 +1,4 @@
-package TascaS102Exceptions.exercise1L1.exception;
+package TascaS102Exceptions.level1.exception;
 
 public class EmptySaleException extends Exception {
     public EmptySaleException() {

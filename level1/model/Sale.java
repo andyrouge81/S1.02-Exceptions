@@ -1,6 +1,6 @@
-package TascaS102Exceptions.exercise1L1.model;
+package TascaS102Exceptions.level1.model;
 
-import TascaS102Exceptions.exercise1L1.exception.EmptySaleException;
+import TascaS102Exceptions.level1.exception.EmptySaleException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,11 +20,11 @@ public class Sale {
 
 
     public List<Product> getProducts() {
-        return List.copyOf(this.products);
+        return this.products;
     }
 
 
-	public String getProductByIndex(int productIndex){
+	/**public String getProductByIndex(int productIndex){
 		String nameIndex="";
 		for(int i = 0; i<products.size();i++){
 			if(products.get(i)== products.get(productIndex)){
@@ -34,7 +34,7 @@ public class Sale {
 		}
 		return nameIndex;
 
-	}
+	}*/
 
     public void addProduct(Product newProduct) {
 
@@ -45,12 +45,12 @@ public class Sale {
 
     public double calculateTotal() throws EmptySaleException {
         this.totalPrice = 0;
-
-        if (this.products.isEmpty()) {
-            throw new EmptySaleException();
-        }
+		if (this.products.isEmpty()) {
+			throw new EmptySaleException();
+		}
 
 		for (Product p : this.products) {
+
 			this.totalPrice += p.getPrice();
 		}
 		return this.totalPrice;

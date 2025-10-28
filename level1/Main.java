@@ -1,8 +1,8 @@
-package TascaS102Exceptions.exercise1L1;
+package TascaS102Exceptions.level1;
 
-import TascaS102Exceptions.exercise1L1.exception.EmptySaleException;
-import TascaS102Exceptions.exercise1L1.model.Product;
-import TascaS102Exceptions.exercise1L1.model.Sale;
+import TascaS102Exceptions.level1.exception.EmptySaleException;
+import TascaS102Exceptions.level1.model.Product;
+import TascaS102Exceptions.level1.model.Sale;
 
 import java.util.Scanner;
 
@@ -18,8 +18,6 @@ public class Main {
 
         Sale sale1 = new Sale();
 
-        // we add two products to our sale1
-        // if you move the products after the first try-catch structure you can see how it works
 
         sale1.addProduct(product2);
         sale1.addProduct(product1);
@@ -41,12 +39,12 @@ public class Main {
 		try{
 			System.out.println("Enter an index for searching the product: ");
 			int indexSearch = enter.nextInt();
-			System.out.println("The product with the index "+indexSearch+" is: "+sale1.getProductByIndex(indexSearch));
+
+			System.out.println("The product with the index "+indexSearch+" is: "+sale1.getProducts().get(indexSearch));
 
 		}catch (IndexOutOfBoundsException ie){
 			System.out.println("There isn't any product at this index.");
 		}
-
 
     }
 }
