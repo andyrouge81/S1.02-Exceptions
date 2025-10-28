@@ -31,7 +31,7 @@ replay_pid*
 *.tmp
 
 #Intellij IDEA
-
+.Rhistory
 .idea/
 *.iml
 *.iws
