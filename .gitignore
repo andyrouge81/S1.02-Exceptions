@@ -42,3 +42,5 @@ out/
 .gradle/
 build/
 
+#macOS file
+.DS_Store
