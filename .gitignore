@@ -31,6 +31,7 @@ replay_pid*
 *.tmp
 
 #Intellij IDEA
+.Rhistory/
 .Rhistory
 .idea/
 *.iml
@@ -40,3 +41,4 @@ out/
 #Gradle/
 .gradle/
 build/
+

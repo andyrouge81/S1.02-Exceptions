@@ -20,10 +20,7 @@ public class Entrance {
 			try {
 				System.out.println(message);
 				byteEntry = input.nextByte();
-				if((byteEntry <  -128) && (byteEntry > 127)){
-					System.out.println("The byte number type ranges from -128 to 127 years.");
-					continue;
-				}
+
 				return byteEntry;
 
 
@@ -31,6 +28,7 @@ public class Entrance {
 				System.err.println("Clue! Enter a number between -128 and 127.");
 
 			}
+
 			input.nextLine();
 		}
 
@@ -123,7 +121,6 @@ public class Entrance {
 
 
 
-
 	public static char readChar(String message){
 		char userEntry ;
 
@@ -131,9 +128,7 @@ public class Entrance {
 			try{
 				System.out.println(message);
 				String a = input.nextLine();
-				if(a.isEmpty()){
-					System.out.println("Please enter any character.");
-				}
+
 				if(a.isBlank()){
 					throw new EntranceException("Enter at least one character.");
 				}
@@ -146,6 +141,7 @@ public class Entrance {
 
 			}catch(StringIndexOutOfBoundsException | EntranceException e){
 				System.err.println("I have must insist, entry some character.");
+				System.out.println(e.getMessage());
 			}
 		}
 
